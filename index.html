@@ -1,30 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MVMT27D');
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-211264823-1');
-</script>
-
-	  </script>
-<!-- End Google Tag Manager -->
   </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVMT27D"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-	
-<script>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211264823-1"></script>
+	<script type="text/javascript" id="d_track_ga">
+		var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+	  _dm_gaq.siteAlias = '9c1faf45';
+	  _dm_gaq.systemAggregatedGaqID = 'UA-211264823-1';
+	  _dm_gaq.externalGaqID = 'UA-211264823-1';
+	  _dm_gaq.gaAggregatedEventAttributes = {
+		  'site_alias':  _dm_gaq.siteAlias,
+		  'product': 'DM_DIRECT',
+		  'plan': 'BUSINESS_PLUS',
+		  'dfooter': 'false',
+		  'sitetype': '1',
+		  'pwaEnabled': 'false'
+	  }
+
+	  _dm_gaq.pushEvent = function(trackingId, event, category, label, value, additionalParams) {
+	  	  var initialProps = {
+			  send_to: trackingId,
+			  event_category: category,
+			  event_label: label,
+			  value: value
+		  }
+		  additionalParams = additionalParams || {};
+	  	  var eventProps = $.extend({}, initialProps, additionalParams, trackingId === _dm_gaq.systemAggregatedGaqID?_dm_gaq.gaAggregatedEventAttributes:{});
+		  gtag('event', event, eventProps);
+	  }
+
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+	  function pushInsiteImpressions(id) {
+		  $.each(_dm_insite, function(idx, rule) {
+			  _dm_gaq.pushEvent(id, 'insite_impression', 'insite', rule.ruleType + '__' + rule.ruleId);
+		  });
+	  }
+
+	if(_dm_gaq.systemAggregatedGaqID){
+		// track aggregated account
+		gtag('config', 'UA-7265702-9', {
+			'send_page_view': false,
+			'anonymize_ip': true,
+			'transport_type': 'beacon',
+			'custom_map': {'dimension1': 'site_alias', 'dimension2': 'product', 'dimension3': 'dFooter', 'dimension4': 'sitetype'}
+		});
+		gtag('set', 'developer_id.dMDU5Nj', true);
+
+		_dm_gaq.pushEvent('UA-211264823-1', 'page_view');
+		pushInsiteImpressions(_dm_gaq.systemAggregatedGaqID);
+	}
+
+	if(_dm_gaq.externalGaqID && _dm_gaq.externalGaqID!= '') {
+		gtag('config', 'UA-2231138-1', {
+			'send_page_view': false,
+			'anonymize_ip': true,
+			'transport_type': 'beacon',
+			'linker': {
+				'domains': ['kwanzoo.com']
+			}
+		});
+		_dm_gaq.pushEvent('UA-211264823-1', 'page_view');
+		pushInsiteImpressions(_dm_gaq.externalGaqID);
+	}
+
 	window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'kzevents',
