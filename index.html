@@ -13,6 +13,15 @@
   cookie_flags: 'SameSite=None;Secure'
 });
   window.addEventListener('load', function() {
+	  function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
+	sleep(10000);
     window.dataLayer.push({
     'event': 'kzevents',
     'kzdomain': "test",
