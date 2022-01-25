@@ -9,7 +9,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'UA-211264823-1');
+  gtag('config', 'UA-211264823-1', {
+  cookie_flags: 'SameSite=None;Secure'
+});
   window.addEventListener('load', function() {
     window.dataLayer.push({
     'event': 'kzevents',
