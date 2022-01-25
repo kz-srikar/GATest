@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-	  <script>
-	  window.addEventListener('load', function() {
-	  function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
 
-	sleep(10000);
-    window.dataLayer.push({
+  </head>
+<body>
+      <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVMT27D');</script>
+<!-- End Google Tag Manager -->
+
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
     'event': 'kzevents',
     'kzdomain': "test",
     'kzdomainsource' : "test2",
@@ -25,21 +27,7 @@
     'kzaccountrevenue' : "test9",
     'kzwebsiteproduct' : "test0", 
   });
- });
-	  </script>
-	</head>
-<body>
-	
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-211264823-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-211264823-1', {
-  cookie_flags: 'SameSite=None;Secure'
-});
-</script> 
+  </script>
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
 
